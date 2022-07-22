@@ -1,0 +1,146 @@
+body {
+    background-color: rgb(50, 50, 50);
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.parent {
+    background-color: blueviolet;
+    height: 30vh;
+    width: 100%;
+    resize: both;
+    overflow: auto;
+}
+.child {
+    background-color: gold;
+    min-width: fit-content;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    padding-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child.purple {
+    background-color: blueviolet;
+    color: aliceblue;
+}
+.child.green {
+    background-color: green;
+    color: aliceblue;
+}
+/*-1. Super Centered-*/
+.parent.center {
+    display: grid;
+    place-items: center;
+}
+/*-2. Deconstructed Pancake-*/
+.parent.pancake {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.child.pancake {
+    margin: 5px;
+}
+.child.pancake.stretch {
+    flex: 1 1 150px;
+}
+.child.pancake.no-stretch {
+    flex: 0 1 150px;
+}
+/*-3. Sidebar Says-*/
+.parent.sidebar {
+    display: grid;
+    grid-template-columns: minmax(150px, 15%) 1fr;
+}
+/*-4. Pancake Stack-*/
+.parent.stack {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+/*-5. Classic Holy Grail Layout-*/
+.parent.grail {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+}
+.child.grail.header {
+    padding: 2rem;
+    grid-column: 1 / 4;
+}
+.child.grail.left {
+    grid-column: 1 / 2;
+}
+.child.grail.middle {
+    grid-column: 2 / 3;
+}
+.child.grail.right {
+    grid-column: 3 / 4;
+}
+.child.grail.footer {
+    grid-column: 1 / 4;
+}
+/*-6. 12-Span Grid-*/
+.parent.span {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.child.span-12 {
+    grid-column: 1 / 13;
+}
+.child.span-6 {
+    grid-column: 1 / 7;
+}
+.child.span-4 {
+    grid-column: 4 / 9;
+}
+.child.span-2 {
+    grid-column: 3 / 5;
+}
+/*-7. RAM (Repeat, Auto, Minmax)-*/
+.parent.ram {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+/*-8. Line Up-*/
+.parent.line-up {
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+.child.line-up {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+}
+.child.line-up h3 {
+    margin: 0;
+}
+.line-up.image {
+    height: 100px;
+    width: 100%;
+    background-color: green;
+}
+/*-9. Clamping My Style-*/
+.parent.clamp {
+    display: grid;
+    place-items: center;
+}
+.child.clamp {
+    width: clamp(45ch, 50%, 75ch);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.clamp.image {
+    height: 125px;
+    width: 100%;
+    background-color: green;
+}
